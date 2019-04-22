@@ -38,9 +38,9 @@ public class ListController {
     public String listColumnValues(Model model, @RequestParam String column) {
 
         if (column.equals("all")) {
-            ArrayList<HashMap<String, String>> jobs = JobData.findAll();
+            ArrayList<HashMap<String, String>> search_results = JobData.findAll();
             model.addAttribute("title", "All Jobs");
-            model.addAttribute("jobs", jobs);
+            model.addAttribute("search_results", search_results);
             return "list-jobs";
         } else {
             ArrayList<String> items = JobData.findAll(column);
