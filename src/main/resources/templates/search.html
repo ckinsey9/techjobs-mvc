@@ -38,6 +38,26 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <div th:unless="${search_results} and ${search_results.size()}">
+        <h3>No Results Found</h3>
+    </div>
+
+   <div th:if="${search_results} and ${search_results.size()}">
+
+        <h3 th:text="${search_results.size() + ' Result(s)'}"></h3>
+
+        <table class="job-listing" th:each="result : ${search_results}">
+        <tr th:each="data : ${result} ">
+            <td th:text="${data.key}"></td>
+            <td th:text="${data.value}"></td>
+        </tr>
+    </table>
+
+  </div>
+
+
+
+
 </div>
 
 </body>
