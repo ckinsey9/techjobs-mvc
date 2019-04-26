@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping("search")
-public class SearchController {
+public class SearchController extends TechJobsController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String search(Model model) {
